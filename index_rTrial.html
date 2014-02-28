@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>D3 World Map Template | TechSlides</title>
+<style>
+.country{
+  stroke:black;
+}
+.country:hover{
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+.text{
+  font-size:10px;
+  text-transform:capitalize;
+}
+#container {
+  margin:10px 10%;
+  border:2px solid #000;
+  border-radius: 5px;
+  height:100%;
+  overflow:hidden;
+  background: #F0F8FF;
+}
+.hidden { 
+  display: none; 
+}
+div.tooltip {
+  color: #222; 
+  background: #fff; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 2px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  opacity: 0.9; 
+  position: absolute;
+}
+.graticule {
+  fill: none;
+  stroke: #bbb;
+  stroke-width: .5px;
+  stroke-opacity: .5;
+}
+.equator {
+  stroke: #ccc;
+  stroke-width: 1px;
+}
+#legend{
+    padding: 1.5em 0 0 1.5em;
+    fill:#333333;
+  }
+li.key{
+  border-top-width: 15px;
+  border-top-style: solid;
+  font-size: .75em;
+  width: 10%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+</style>
+</head>
+<body>
+
+  <h1>Mine ownerships in Africa</h1>
+  <p>Navigating ownership of mines in sub-saharan Africa </p>
+
+  <div id="legend"></div>
+  <div id="container">
+  </div>
+<script src="_js/jquery-1.10.2.min.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/topojson.v1.min.js"></script>
+<script src="js/colorbrewer.js"></script>
+<script>
+// loader function 
+  d3.loadData = function() {
+        var loadedCallback = null;
+        var toload = {};
+        var data = {};
+        var loaded = function(name, d) {
+          delete toload[name];
+          data[name] = d;
+          return notifyIfAll();
+        };
+        var notifyIfAll = function() {
+          if ((loadedCallback != null) && d3.keys(toload).length === 0) {
+            loadedCallback(data);
+          }
+        };
+        var loader = {
+          json: function(name, url) {
+            toload[name] = url;
+            d3.json(url, function(d) {
+              return loaded(name, d);
+            });
+            return loader;
+          },
+          csv: function(name, url) {
+            toload[name] = url;
+            d3.csv(url, function(d) {
+              return loaded(name, d);
+            });
+            return loader;
+          },
+          onload: function(callback) {
+            loadedCallback = callback;
+            notifyIfAll();
+          }
+        };
+        return loader;
+      };
+
+d3.select(window).on("resize", throttle);
+
+var zoom = d3.behavior.zoom()
+    .scaleExtent([1, 9])
+    .on("zoom", move);
+
+
+var width = document.getElementById('container').offsetWidth;
+var height = width / 2;
+
+var colorScale = d3.scale.quantize()
+        .domain([1.0, 5.0])
+        .range(colorbrewer.Oranges[5]);
+
+var color,topo,projection,path,svg,g,legend;
+
+var graticule = d3.geo.graticule();
+
+var tooltip = d3.select("#container").append("div").attr("class", "tooltip hidden");
+
+setup(width,height);
+
+var legend = d3.select('#legend')
+            .append('ul')
+              .attr('class', 'list-inline');
+
+var formats = {
+  percent: d3.format('.2f')
+}
+
+
+function setup(width,height){
+  projection = d3.geo.mercator()
+    .translate([(width/2), (height/2)])
+    .scale( width / 1 / Math.PI);
+
+  path = d3.geo.path().projection(projection);
+
+  svg = d3.select("#container").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .call(zoom)
+      .on("click", click)
+      .append("g");
+
+  g = svg.append("g");
+
+}
+
+/*d3.json("data/Sub_Saharan_Africa_TJ.json", function(error, world) {
+
+  //['rgb(254,230,206)','rgb(253,174,107)','rgb(230,85,13)']
+
+  var countries = topojson.feature(world, world.objects.layer1).features;
+
+  topo = countries;
+  draw(topo);
+
+});*/
+
+d3.loadData()
+      .json('countries', "data/Sub_Saharan_Africa_TJ.json")
+      .csv('ratio', 'data/minesRatiocr.csv')
+      .onload(function(world) {
+
+        d3.select("#loading").attr("visibility", "hidden");
+        var countries = topojson.feature(world.countries, world.countries.objects.layer1).features;
+
+  topo = countries;
+  //draw(topo);
+  // Moved draw(topo) method into loadData
+  //console.log(world.ratio);
+
+  svg.append("path")
+     .datum(graticule)
+     .attr("class", "graticule")
+     .attr("d", path);
+
+
+  g.append("path")
+   .datum({type: "LineString", coordinates: [[-180, 0], [-90, 0], [0, 0], [90, 0], [180, 0]]})
+   .attr("class", "equator")
+   .attr("d", path);
+
+
+  var country = g.selectAll(".country").data(topo);
+
+  country.enter().insert("path")
+      .attr("class", "country")
+      .attr("d", path)
+      .attr("id", function(d,i) { return d.id; })
+      .attr("title", function(d,i) { return d.properties.name; })
+      .style("fill", function(d, i) { return colorgenerator(d.properties.sov_a3,'Australia',world.ratio);});
+      //.style("fill", function(d, i) { return colorScale(4);});
+      //.style("fill", function(d, i) { return d.properties.color; });
+
+      // Add code, China
+
+  //offsets for tooltips
+  var offsetL = document.getElementById('container').offsetLeft+20;
+  var offsetT = document.getElementById('container').offsetTop+10;
+
+  //tooltips
+  country
+    .on("mousemove", function(d,i) {
+
+      var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+
+      tooltip.classed("hidden", false)
+             .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+             .html(d.properties.name);
+
+      })
+      .on("mouseout",  function(d,i) {
+        tooltip.classed("hidden", true);
+      }); 
+
+      var keys = legend.selectAll('li.key')
+            .data(colorScale.range());
+
+      keys.enter().append('li')
+            .attr('class', 'key')
+            .style('border-top-color',String)
+            .text(function(d){
+              var r = colorScale.invertExtent(d);
+              return formats.percent(r[0]);
+            });
+
+})
+
+function colorgenerator(countrycode,cfilter,ratiodata){
+
+  var prop;
+  $.each(ratiodata,function(index, value){
+    
+    if(value.Controllingcompany1country === 'Australia'){
+      var prop = parseFloat(value[countrycode]);
+      if (typeof prop === "undefined")
+      {
+        color = colorScale(1)  
+      }
+      else 
+        {
+          if(prop <= 0){color = colorScale(2)}
+          else if (prop <= 0.0934 && prop >0){color = colorScale(3);prop = 2.0;}
+          else if(prop <= 0.1868 && prop > 0.0934 ){color = colorScale(4);prop=3.0;}
+          else if (prop <=0.283 && prop > 0.1868){color = colorScale(5);prop=4.0;}
+          else if(prop > 0.283){color = colorScale(5);prop = 5;}
+          else {color = colorScale(1);prop=1;}
+    }
+    
+
+  }})
+  //color = colorScale(4);
+  console.log(color);
+
+  return color;
+}
+
+function draw(topo) {
+
+  svg.append("path")
+     .datum(graticule)
+     .attr("class", "graticule")
+     .attr("d", path);
+
+
+  g.append("path")
+   .datum({type: "LineString", coordinates: [[-180, 0], [-90, 0], [0, 0], [90, 0], [180, 0]]})
+   .attr("class", "equator")
+   .attr("d", path);
+
+
+  var country = g.selectAll(".country").data(topo);
+
+  country.enter().insert("path")
+      .attr("class", "country")
+      .attr("d", path)
+      .attr("id", function(d,i) { return d.id; })
+      .attr("title", function(d,i) { return d.properties.name; })
+      .style("fill", function(d, i) { return colorScale(3);});
+
+      //.style("fill", function(d, i) { return d.properties.color; });
+
+  //offsets for tooltips
+  var offsetL = document.getElementById('container').offsetLeft+20;
+  var offsetT = document.getElementById('container').offsetTop+10;
+
+  //tooltips
+  country
+    .on("mousemove", function(d,i) {
+
+      var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+
+      tooltip.classed("hidden", false)
+             .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+             .html(d.properties.name);
+
+      })
+      .on("mouseout",  function(d,i) {
+        tooltip.classed("hidden", true);
+      }); 
+
+
+  //EXAMPLE: adding some capitals from external CSV file
+  /*d3.csv("data/country-capitals.csv", function(err, capitals) {
+
+    capitals.forEach(function(i){
+      addpoint(i.CapitalLongitude, i.CapitalLatitude, i.CapitalName );
+    });
+
+  });*/
+
+}
+
+
+function redraw() {
+  width = document.getElementById('container').offsetWidth;
+  height = width / 2;
+  d3.select('svg').remove();
+  setup(width,height);
+  draw(topo);
+}
+
+
+function move() {
+
+  var t = d3.event.translate;
+  var s = d3.event.scale; 
+  zscale = s;
+  var h = height/4;
+
+
+  t[0] = Math.min(
+    (width/height)  * (s - 1), 
+    Math.max( width * (1 - s), t[0] )
+  );
+
+  t[1] = Math.min(
+    h * (s - 1) + h * s, 
+    Math.max(height  * (1 - s) - h * s, t[1])
+  );
+
+  zoom.translate(t);
+  g.attr("transform", "translate(" + t + ")scale(" + s + ")");
+
+  //adjust the country hover stroke width based on zoom level
+  d3.selectAll(".country").style("stroke-width", 1.5 / s);
+
+}
+
+
+
+var throttleTimer;
+function throttle() {
+  window.clearTimeout(throttleTimer);
+    throttleTimer = window.setTimeout(function() {
+      redraw();
+    }, 200);
+}
+
+
+//geo translation on mouse click in map
+function click() {
+  var latlon = projection.invert(d3.mouse(this));
+  console.log(latlon);
+}
+
+
+//function to add points and text to the map (used in plotting capitals)
+function addpoint(lat,lon,text) {
+
+  var gpoint = g.append("g").attr("class", "gpoint");
+  var x = projection([lat,lon])[0];
+  var y = projection([lat,lon])[1];
+
+  gpoint.append("svg:circle")
+        .attr("cx", x)
+        .attr("cy", y)
+        .attr("class","point")
+        .attr("r", 1.5);
+
+  //conditional in case a point has no associated text
+  if(text.length>0){
+
+    gpoint.append("text")
+          .attr("x", x+2)
+          .attr("y", y+2)
+          .attr("class","text")
+          .text(text);
+  }
+
+}
+
+</script>
+</body>
+</html>
