@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+  margin: 0;
+}
+
+.line {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+.area {
+  fill: #e7e7e7;
+}
+.x.axis path {
+    display: none;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+.tick text{
+  color:#000;
+}
+
+</style>
+<body>
+<div><h1> Production of Chinese owned mines by metal </h1></div>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script>
+
+var margin = {top: 8, right: 10, bottom: 20, left: 10},
+    width = 960 - margin.left - margin.right,
+    height = 69 - margin.top - margin.bottom;
+
+//var parseDate = d3.time.format("%b %Y").parse;
+
+var x = d3.scale.linear()
+    .range([0, width]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+    .tickFormat(d3.format("d"));
+
+d3.csv("data/productionmain20.csv", function(error, data){
+
+data = data.filter(function(row){
+  return row['Companycountry'] == 'China';
+});
+
+nest_data = d3.nest()
+  .key(function(d) {return d.metal})
+  .rollup(function(l){return{
+      "1990": d3.sum(l, function(m){return parseFloat(m.Y1990);}),
+      "1991": d3.sum(l, function(m){return parseFloat(m.Y1991);}),
+      "1992": d3.sum(l, function(m){return parseFloat(m.Y1992);}),
+      "1993": d3.sum(l, function(m){return parseFloat(m.Y1993);}),
+      "1994": d3.sum(l, function(m){return parseFloat(m.Y1994);}),
+      "1995": d3.sum(l, function(m){return parseFloat(m.Y1995);}),
+      "1996": d3.sum(l, function(m){return parseFloat(m.Y1996);}),
+      "1997": d3.sum(l, function(m){return parseFloat(m.Y1997);}),
+      "1998": d3.sum(l, function(m){return parseFloat(m.Y1998);}),
+      "1999": d3.sum(l, function(m){return parseFloat(m.Y1999);}),
+      "2000": d3.sum(l, function(m){return parseFloat(m.Y2000);}),
+      "2001": d3.sum(l, function(m){return parseFloat(m.Y2001);}),
+      "2003": d3.sum(l, function(m){return parseFloat(m.Y2003);}),
+      "2003": d3.sum(l, function(m){return parseFloat(m.Y2004);}),
+      "2004": d3.sum(l, function(m){return parseFloat(m.Y2005);}),
+      "2006": d3.sum(l, function(m){return parseFloat(m.Y2006);}),
+      "2007": d3.sum(l, function(m){return parseFloat(m.Y2007);}),
+      "2008": d3.sum(l, function(m){return parseFloat(m.Y2008);}),
+      "2009": d3.sum(l, function(m){return parseFloat(m.Y2009);}),
+      "2010": d3.sum(l, function(m){return parseFloat(m.Y2010);}),
+      "2011": d3.sum(l, function(m){return parseFloat(m.Y2011);}),
+      "2012": d3.sum(l, function(m){return parseFloat(m.Y2012);})
+  }
+  })
+  .entries(data)
+
+console.log(nest_data);
+// convert the values for each key to object with year & prod values
+var allData = [];
+
+for (var i = nest_data.length - 1; i >= 0; i--) {
+  var prodArr = [];
+  keyVal = nest_data[i].key;
+  values = nest_data[i].values;
+
+  prodArr.push({'year':1990,'prod':values['1990']});
+  prodArr.push({'year':1991,'prod':values['1991']});
+  prodArr.push({'year':1992,'prod':values['1992']});
+  prodArr.push({'year':1993,'prod':values['1993']});
+  prodArr.push({'year':1994,'prod':values['1994']});
+  prodArr.push({'year':1995,'prod':values['1995']});
+  prodArr.push({'year':1996,'prod':values['1996']});
+  prodArr.push({'year':1997,'prod':values['1997']});
+  prodArr.push({'year':1998,'prod':values['1998']});
+  prodArr.push({'year':1999,'prod':values['1999']});
+  prodArr.push({'year':2000,'prod':values['2000']});
+  prodArr.push({'year':2001,'prod':values['2001']});
+  prodArr.push({'year':2002,'prod':values['2002']});
+  prodArr.push({'year':2003,'prod':values['2003']});
+  prodArr.push({'year':2004,'prod':values['2004']});
+  prodArr.push({'year':2005,'prod':values['2005']});
+  prodArr.push({'year':2006,'prod':values['2006']});
+  prodArr.push({'year':2007,'prod':values['2007']});
+  prodArr.push({'year':2008,'prod':values['2008']});
+  prodArr.push({'year':2009,'prod':values['2009']});
+  prodArr.push({'year':2010,'prod':values['2010']});
+  prodArr.push({'year':2011,'prod':values['2011']});
+  prodArr.push({'year':2012,'prod':values['2012']});
+  //console.log("Val="+nest_data[i].values['1990']);
+allData.push({key:keyVal, values:prodArr});
+};
+console.log(allData);
+
+x.domain([
+    d3.min(allData, function(metal) { return metal.values[0].year; }),
+    d3.max(allData, function(metal) { return metal.values[metal.values.length - 1].year; })
+      ]);
+
+var svg = d3.select("body").selectAll("svg")
+      .data(allData)
+    .enter().append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .each(function(metal) {
+        metal.y = d3.scale.linear()
+            .domain([0, d3.max(metal.values, function(d) 
+              { 
+                if(typeof d.prod == "undefined") return 0;
+                else return +d.prod; })])
+            .range([height, 0]);
+      });
+
+svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+svg.append("path")
+      .attr("class", "area")
+      .attr("d", function(metal) {
+        return d3.svg.area()
+            .x(function(d) {return x(d.year); })
+            .y1(function(d) { 
+              if(typeof d.prod == "undefined") return metal.y(0);
+              else return metal.y(+d.prod);})
+            .y0(height)
+            (metal.values);
+      });
+
+  svg.append("path")
+      .attr("class", "line")
+      .attr("d", function(metal) {
+        return d3.svg.line()
+            .x(function(d) { return x(d.year); })
+            .y(function(d) { 
+              if(typeof d.prod == "undefined") return metal.y(0);
+              else return metal.y(+d.prod); })
+            (metal.values);
+      });
+
+  svg.append("text")
+      .attr("x", width - 6)
+      .attr("y", height - 6)
+      .style("text-anchor", "end")
+      .text(function(metal) { return metal.key; });
+
+
+
+});
+</script>

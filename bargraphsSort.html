@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Bars</title>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+<script src="js/d3.min.js" type="text/javascript"></script>
+<script src="js/colorbrewer.js" type="text/javascript"></script>
+<script src="js/underscore-min.js" type="text/javascript"></script>
+<style>
+  body { 
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  width: 960px; }
+  .bar {
+  fill: steelblue;
+  fill-opacity: .9;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+</style>
+</head>
+<body>
+<div id='map'></div>
+<div id='legend-content'>DESCRIPTIVE STATISTICS ON FOREIGN OWNERSHIP OF MINES IN SUB-SAHARAN AFRICA</div>
+<label><input type="checkbox"> Sort values</label>
+</body>
+<script type="text/javascript">
+	d3.csv('data/minesMin1.csv', function(mines){
+
+    selectedNation = 'Australia';
+    // iterate through the mines
+    var nested_data_by_country = d3.nest()
+            .key(function(d){return d.admin_03;})
+            .key(function(d){return d.Companycountry;})
+            .rollup(function(d){return d.length})
+            .entries(mines);
+        
+
+    var nested_data_by_country2 = d3.nest()
+            .key(function(d){return d.Companycountry;})
+            .rollup(function(d){return d.length})
+            .entries(mines);
+
+    console.log(nested_data_by_country2);
+
+    	var nested_data_by_country3 = d3.nest()
+            .key(function(d){return d.Companycountry;})
+            .key(function(d){return d.admin_03;})
+            .rollup(function(d){return d.length})
+            .entries(mines);
+
+    //console.log(nested_data_by_country3);
+
+var nations = ['UK','China','Russia','Canada','Australia','Brazil','Switzerland','France','UAE','India','Saudi Arabia'];
+
+function isInNations(element){
+	var fact;
+	for (var i = nations.length - 1; i >= 0; i--) {
+		fact = nations[i]=== element.key;
+		if(fact){return fact};
+	};
+}
+
+function selectNation(element){
+	//console.log(nested_data_by_country3);
+	for (var i = nested_data_by_country3.length - 1; i >= 0; i--) {
+		isNation = nested_data_by_country3[i].key===element;
+		if(isNation){return nested_data_by_country3[i].values;}
+	};
+}
+
+var filteredNations = nested_data_by_country2.filter(isInNations);
+console.log(filteredNations);
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1,1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+   // .ticks(5);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  x.domain(filteredNations.map(function(d) { return d.key; }));
+  y.domain([0, d3.max(filteredNations, function(d) { return d.values; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Number of mines");
+
+  svg.selectAll(".bar")
+      .data(filteredNations)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.key); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.values); })
+      .attr("height", function(d) { return height - y(d.values); })
+      .on("click", click);
+
+// Add transitions
+ d3.select("input").on("change", change);
+
+  var sortTimeout = setTimeout(function() {
+    d3.select("input").property("checked", true).each(change);
+  }, 2000);
+
+  function change() {
+    clearTimeout(sortTimeout);
+
+    // Copy-on-write since tweens are evaluated after a delay.
+    var x0 = x.domain(filteredNations.sort(this.checked
+        ? function(a, b) { return b.values - a.values; }
+        : function(a, b) { return d3.ascending(a.key, b.key); })
+        .map(function(d) { return d.key; }))
+        .copy();
+
+    var transition = svg.transition().duration(750),
+        delay = function(d, i) { return i * 50; };
+
+    transition.selectAll(".bar")
+        .delay(delay)
+        .attr("x", function(d) { return x0(d.key); });
+
+    transition.select(".x.axis")
+        .call(xAxis)
+      .selectAll("g")
+        .delay(delay);
+  }
+ //on click
+ function click(e){
+ 	//console.log(e.key);
+ 	console.log(selectNation(e.key));
+ 	var countriesperforeign = selectNation(e.key);
+ 	//console.log(countriesperforeign);
+ 	 width = 480 - margin.left - margin.right,
+    height = 250 - margin.top - margin.bottom;
+	//alert(e.key);
+	var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10);
+
+var svg2 = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  x.domain(countriesperforeign.map(function(d) { return d.key; }));
+  y.domain([0, d3.max(countriesperforeign, function(d) { return d.values; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Number of mines");
+
+  svg2.selectAll(".bar")
+      .data(countriesperforeign)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.key); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.values); })
+      .attr("height", function(d) { return height - y(d.values); })
+}
+
+});
+
+function type(d) {
+  d.values = +d.values;
+  return d;
+}
+
+
+    
+</script>
+</html>
