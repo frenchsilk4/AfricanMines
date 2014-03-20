@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+svg {
+  padding: 10px 0 0 10px;
+}
+
+.arc {
+  stroke: #fff;
+}
+div.columns       { width: 100%; }
+div.columns div   {float: left; }
+div.chart          { width: 1040px; background-color: #fff; }
+div.lege           { width: 150px; background-color: #fff; }
+div.clear         { clear: both; }
+</style>
+<body>
+<div class="columns">
+    <div class="lege" ></div>
+    <div class="chart"></div>
+</div>
+<div class="clear"></div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/colorbrewer.js" type="text/javascript"></script>
+<script>
+
+var radius = 74,
+    padding = 10;
+
+var color = d3.scale.ordinal()
+            .range(['#edf8b1', '#fec44f', '#ffdd11','#f03b20','#d95f0e','#7fcdbb','#2c7fb8','#31a354','#addd8e', '#c51b8a','#fa9fb5', '#dd1c77', '#c994c7', '#1c9099', '#a6bdddb', '#2b8cbe','#8856a7','#ffffb3','#886655','#922729','#334444','#99aabb','#333355','#ff6600','#ccbbff']);
+        //.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00","de2d26","#f7fcfd","#e5f5f9","#ccece6","#99d8c9","#66c2a4","#41ae76","#238b45","#006d2c","#00441b","#7f3b08","#b35806","#e08214","#fdb863","#fee0b6","#f7f7f7","#d8daeb","#b2abd2"]);
+      //.range(colorbrewer.YlOrBr[6]);
+
+var arc = d3.svg.arc()
+    .outerRadius(radius)
+    .innerRadius(radius - 30);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { return d.count; });
+
+d3.csv("data/minePivot.csv", function(error, data) {
+  //color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Companycountry"; }));
+    color.domain(['Dia','Mn','Au','coal','Cu','Co','Ni','PGM','Ag','Pb','Zn','coltan','U','Al','Fe','Cr','Mo','Sn','W','PO43','Ti','Li','Sb','V','Zr']);
+
+  /*data.forEach(function(d) {
+    d.ages = color.domain().map(function(name) {
+      return {name: name, population: +d[name]};
+    });
+  });*/
+    var nested_data = d3.nest()
+                    .key(function(d) {return d.Companycountry})
+                    .key(function(d){return d.Metal})
+                    //.key(function(d){return d.Mine})
+                    .rollup(function(m){return {'count': m.length};})
+                    .entries(data)
+
+  //console.log(nested_data)
+
+  nested_data.forEach(function(d) {
+    var cout = 0;
+    c_key = d.key;
+    //d.metals = d.values.map(function(name){return {name:name.key, count:+name.values.count};})
+    //console.log(d.values[0]);
+    d.metals = color.domain().map(function(name){
+            d.values.some(function(e){
+              if(name === e.key){
+                //console.log(e.key +" : "+e.values.count);
+                return cout = +e.values.count;
+              }
+              else return cout = 0;
+            })
+            return {name:name, count:cout};})
+
+    //console.log(d.values);
+     //console.log(d.metals);
+
+    //d.metals = color.domain().map(function(name) {
+      //console.log(name)
+      //return {name: name, population: +d[name]};
+    //});
+  });
+  console.log(nested_data)
+
+
+
+  var legend = d3.select(".lege").append("svg")
+      .attr("class", "legend")
+      .attr("width", radius * 2)
+      .attr("height", radius * 8)
+    .selectAll("g")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .text(function(d) { return d; });
+
+  var svg = d3.select(".chart").selectAll(".pie")
+      .data(nested_data)
+    .enter().append("svg")
+      .attr("class", "pie")
+      .attr("width", radius * 2)
+      .attr("height", radius * 2)
+    .append("g")
+      .attr("transform", "translate(" + radius + "," + radius + ")");
+
+  svg.selectAll(".arc")
+      .data(function(d) { return pie(d.metals); })
+    .enter().append("path")
+      .attr("class", "arc")
+      .attr("d", arc)
+      .style("fill", function(d) { return color(d.data.name); });
+
+  svg.append("text")
+      .attr("dy", ".35em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.key; });
+
+});
+
+</script>

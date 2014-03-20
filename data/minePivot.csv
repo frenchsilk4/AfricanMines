@@ -1,0 +1,856 @@
+Index,Companycountry,Metal,Mine,Status
+0,Russia,Dia,Catoca,Operating
+1,Angola,Dia,Cuango,"Operating, exp/plans"
+2,Angola,Dia,Empresa,Active
+3,Angola,Dia,Luarica,Suspended
+4,Angola,Dia,Lucapa,Operating
+5,UK,Dia,Luo,"Susp, restart/feasib"
+6,UK,Dia,Yetwene,Suspended
+7,UK,Dia,Damtshaa,Suspended
+8,Botswana,Mn,Jacomar,Suspended
+9,UK,Dia,Jwaneng,"Operating, exp/feasib"
+10,Canada,Dia,Karowe,Operating
+11,UK,Dia,Letlhakane,Operating
+12,Canada,Au,Monarch,Closed
+13,UK,coal,Morupule,"Operating, exp/plans"
+14,Luxembourg,Cu,Mowana,Suspended
+15,Canada,Au,Mupane,Operating
+16,UK,Dia,Orapa,Operating
+17,Russia,Co,Phoenix,"Operating, exp/plans"
+18,Russia,Cu,Phoenix,"Operating, exp/plans"
+19,Russia,Au,Phoenix,"Operating, exp/plans"
+20,Russia,Ni,Phoenix,"Operating, exp/plans"
+21,Russia,PGM,Phoenix,"Operating, exp/plans"
+22,Russia,PGM,Phoenix,"Operating, exp/plans"
+23,Russia,PGM,Phoenix,"Operating, exp/plans"
+24,Russia,Ag,Phoenix,"Operating, exp/plans"
+25,Botswana,Co,Selebi-Phikwe,Operating
+26,Botswana,Cu,Selebi-Phikwe,Operating
+27,Botswana,Ni,Selebi-Phikwe,Operating
+28,Russia,Co,Tati,Active
+29,Russia,Cu,Tati,Active
+30,Russia,Au,Tati,Active
+31,Russia,Ni,Tati,Active
+32,Russia,PGM,Tati,Active
+33,Russia,PGM,Tati,Active
+34,Russia,PGM,Tati,Active
+35,Russia,Ag,Tati,Active
+36,Canada,Au,Essakane,"Operating, exp/constr"
+37,UK,Au,Inata,Operating
+38,UK,Au,Kalsaka,Operating
+39,Canada,Au,Mana,"Operating, exp/feasib"
+40,Burkina Faso,Ag,St_,Active
+41,Burkina Faso,Au,St_,Active
+42,Russia,Au,Taparko,Operating
+43,Canada,Au,Youga,Operating
+44,Congo (Brazzaville),Cu,St_,Active
+45,Congo (Brazzaville),Pb,St_,Active
+46,Congo (Brazzaville),Zn,St_,Active
+47,Canada,Au,Afema,Suspended
+48,Australia,Au,Bonikro,Operating
+49,Egypt,Au,Ity,Operating
+50,Cote d'Ivoire,coltan,St_,Active
+51,South Africa,Au,Tongon,Operating
+52,UK,Au,Yaoure,"Susp, restart/plans"
+53,USA,Co,Big,Operating
+54,USA,Cu,Big,Operating
+55,USA,Zn,Big,Operating
+56,Australia,Cu,Dikulushi,"Operating, exp/feasib"
+57,Australia,Ag,Dikulushi,"Operating, exp/feasib"
+58,United Arab Emirates,Co,Etoile,Operating
+59,United Arab Emirates,Cu,Etoile,Operating
+60,UK,Cu,Frontier,"Susp, restart/plans"
+61,Congo (DRC),Co,Gecamines,Operating
+62,Congo (DRC),Cu,Gecamines,Operating
+63,Congo (DRC),Au,Gecamines,Operating
+64,Congo (DRC),Ag,Gecamines,Operating
+65,Ethiopia,coltan,Kenticha,Operating
+66,Saudi Arabia,Au,Lega,"Operating, exp/constr"
+67,France,U,Cie,Active
+68,France,Mn,Moanda,Operating
+69,USA,Au,Ahafo,Operating
+70,Ghana,Dia,Akwatia,Operating
+71,China,Al,Awaso,Operating
+72,Australia,Au,Bibiani,Operating
+73,USA,Au,Bogoso/Prestea,"Operating, exp/plans"
+74,Canada,Au,Chirano,"Operating, exp/feasib"
+75,South Africa,Au,Damang,Operating
+76,Australia,Au,Edikan,Operating
+77,South Africa,Au,Iduapriem,Operating
+78,Canada,Dia,Aredor,Operating
+79,Guinea,Al,Boke,Operating
+80,Russia,Al,Friguia,Operating
+81,Canada,Dia,Hymex,Active
+82,Russia,Al,Kindia,Operating
+83,Canada,Au,Kiniero,Operating
+84,Russia,Au,Lero-Fayalala,"Operating, exp/plans"
+85,South Africa,Au,Siguiri,Operating
+86,South Africa,Au,Lolgorien,Operating
+87,UK,Dia,Letseng,"Operating, exp/feasib"
+88,UK,Dia,Liqhobong,Operating
+89,Liberia,Fe,Lamco,Closed
+90,Liberia,Fe,Liberian,Active
+91,UK,Fe,Yekepa,Operating
+92,Canada,Co,Ambatovy,Operating
+93,Canada,Ni,Ambatovy,Operating
+94,Madagascar,Cr,Kraomita,Operating
+95,Australia,U,Kayelekera,Operating
+96,South Africa,Au,Gounkoto,Operating
+97,UK,Au,Kalana,"Operating, exp/constr"
+98,South Africa,Au,Loulo,Operating
+99,South Africa,Au,Morila,Operating
+100,South Africa,Au,Sadiola,"Operating, exp/feasib"
+101,Mali,Au,St_,Active
+102,Australia,Au,Syama,"Operating, exp/constr"
+103,Canada,Au,Tabakoto,Operating
+104,South Africa,Au,Yatela,Operating
+105,UK,coal,Benga,Operating
+106,UK,coltan,Marropino,Operating
+107,Australia,coal,Minas,"Operating, exp/feasib"
+108,Brazil,coal,Moatize,"Operating, exp/constr"
+109,UK,Dia,Atlantic,Operating
+110,UK,Dia,Elizabeth,Operating
+111,South Africa,Cu,Kombat/Asis,Suspended
+112,South Africa,Pb,Kombat/Asis,Suspended
+113,South Africa,Ag,Kombat/Asis,Suspended
+114,Australia,U,Langer,"Operating, exp/constr"
+115,UK,Cu,Matchless,Operating
+116,UK,Ag,Matchless,Operating
+117,UK,Dia,Mining,Operating
+118,UK,Dia,Namco,Operating
+119,UK,Dia,Namdeb,Operating
+120,UK,Dia,Namdeb,Operating
+121,South Africa,Au,Navachab,Operating
+122,UK,Dia,Orange,Operating
+123,UK,Cu,Otjihase,Operating
+124,UK,Au,Otjihase,Operating
+125,UK,Ag,Otjihase,Operating
+126,South Africa,Mn,Otjisondu,Operating
+127,Switzerland,Pb,Rosh,Operating
+128,Switzerland,Ag,Rosh,Operating
+129,Switzerland,Zn,Rosh,Operating
+130,UK,U,R_ssing,"Operating, exp/plans"
+131,UK,Zn,Skorpion,Operating
+132,UK,Cu,Tsumeb,Closed
+133,UK,Pb,Tsumeb,Closed
+134,UK,Ag,Tsumeb,Closed
+135,UK,Zn,Tsumeb,Closed
+136,France,U,Akouta,Operating
+137,France,U,Arlit,Operating
+138,France,Mo,Cie,Active
+139,Canada,Au,Samira,Operating
+140,Niger,Sn,St_,
+141,Nigeria,Fe,Itakpe,Operating
+142,Nigeria,Sn,Nigerian,Active
+143,Niger,coal,Tefereyre,Operating
+144,Rwanda,W,Regie,Active
+145,Senegal,PO43,Cie,Active
+146,Australia,Au,Douta,Suspended
+147,Canada,Au,Sabodala,"Operating, exp/feasib"
+148,France,PO43,Thies,Operating
+149,UK,Fe,Marampa,"Operating, exp/plans"
+150,Sierra Leone,Al,Sierra,Active
+151,Switzerland,Ti,Sierra,"Operating, exp/feasib"
+152,Netherlands,Al,SML,Operating
+153,South Africa,Dia,Dokolwayo,Closed
+154,Swaziland,coal,Maloma,Operating
+155,Canada,Au,Bulyanhulu,"Operating, exp/feasib"
+156,Canada,Au,Buzwagi,Operating
+157,South Africa,Au,Geita,"Operating, exp/plans"
+158,Australia,Au,Golden,Operating
+159,UK,Au,New,Operating
+160,Canada,Au,North,Operating
+161,Tanzania,Au,State,Active
+162,Canada,Au,Tulawaka,Operating
+163,South Africa,Dia,Williamson,Operating
+164,Togo,PO43,Cie,Active
+165,Togo,PO43,Office,Active
+166,Uganda,W,Bjordal,Operating
+167,Uganda,Cu,Kilembe,Active
+168,China,Cu,Baluba,Operating
+169,Canada,Cu,Bwana,Closed
+170,China,Cu,Chambishi,"Operating, exp/constr"
+171,China,Co,Chibuluma,Closed
+172,China,Cu,Chibuluma,Closed
+173,China,Cu,Chibuluma,Operating
+174,Canada,Au,Dunrobin,"Susp, restart/constr"
+175,Canada,Cu,Kansanshi,Operating
+176,Canada,Cu,Kansanshi,"Operating, exp/constr"
+177,Canada,Au,Kansanshi,"Operating, exp/constr"
+178,UK,Cu,Konkola,Operating
+179,UK,Cu,Luanshya,"Susp, restart/plans"
+180,Brazil,Cu,Lubambe,Operating
+181,Canada,Cu,Lumwana,"Operating, exp/feasib"
+182,Switzerland,Cu,Mufulira,Operating
+183,Switzerland,Cu,Mufulira,Operating
+184,UK,Cu,Nchanga,Operating
+185,UK,Co,Nchanga,Operating
+186,UK,Cu,Nchanga,Operating
+187,Switzerland,Co,Nkana,"Operating, exp/plans"
+188,Switzerland,Cu,Nkana,"Operating, exp/plans"
+189,Switzerland,Co,Sable,Operating
+190,Switzerland,Cu,Sable,Operating
+191,Zimbabwe,Au,Aardcor,Active
+192,South Africa,Au,Arcturus,Operating
+193,South Africa,Au,Athens,Suspended
+194,South Africa,Au,Attica,Active
+195,Zimbabwe,Li,Bikita,Active
+196,UK,Co,Bindura,Active
+197,UK,Cu,Bindura,Active
+198,UK,Ni,Bindura,Active
+199,UK,PGM,Bindura,Active
+200,UK,PGM,Bindura,Active
+201,UK,PGM,Bindura,Active
+202,Canada,Au,Blanket,"Operating, exp/plans"
+203,India,Fe,Buchwa,Closed
+204,Zimbabwe,Au,Cam,Operating
+205,Canada,Au,Camperdown,Operating
+206,Canada,Au,Connemara,Closed
+207,South Africa,Cu,Corsyn,Active
+208,South Africa,Ag,Corsyn,Active
+209,Canada,Au,Dalny,Operating
+210,Zimbabwe,PO43,Dorowa,Active
+211,Zimbabwe,Au,Elvington,Operating
+212,UK,Co,Epoch,Closed
+213,UK,Cu,Epoch,Closed
+214,UK,Ni,Epoch,Closed
+215,South Africa,Au,Eureka,Operating
+216,Zimbabwe,Au,Freda,Suspended
+217,UK,Au,Freda,"Operating, exp/plans"
+218,Canada,Au,Golden,Closed
+219,Canada,Au,Golden,Operating
+220,South Africa,PGM,Hartley,Suspended
+221,South Africa,PGM,Hartley,Suspended
+222,South Africa,PGM,Hartley,Suspended
+223,South Africa,PGM,Hartley,Suspended
+224,South Africa,Au,How,Operating
+225,Zimbabwe,coal,Hwange,Operating
+226,Zimbabwe,coal,Hwange,Operating
+227,Canada,Au,Indarama,Suspended
+228,UK,Au,Inez,Suspended
+229,Zimbabwe,Au,Jena,Operating
+230,Zimbabwe,coltan,Kamativi,Active
+231,Zimbabwe,coltan,Kamativi,Active
+232,Zimbabwe,Sn,Kamativi,Active
+233,UK,Co,Madziwa,Closed
+234,UK,Cu,Madziwa,Closed
+235,UK,Ni,Madziwa,Closed
+236,UK,Au,Maligreen,Closed
+237,South Africa,Au,Mazowe,Suspended
+238,Zimbabwe,Cu,Merits,Active
+239,South Africa,Au,Metallon,Active
+240,Zimbabwe,Cu,Mhangura,Active
+241,Zimbabwe,Au,Mhangura,Active
+242,Zimbabwe,PGM,Mhangura,Active
+243,Zimbabwe,PGM,Mhangura,Active
+244,Zimbabwe,PGM,Mhangura,Active
+245,Zimbabwe,Ag,Mhangura,Active
+246,Australia,Co,Mimosa,Operating
+247,Australia,Cu,Mimosa,Operating
+248,Australia,Au,Mimosa,Operating
+249,Australia,Ni,Mimosa,Operating
+250,Australia,PGM,Mimosa,Operating
+251,Australia,PGM,Mimosa,Operating
+252,Australia,PGM,Mimosa,Operating
+253,Australia,PGM,Mimosa,Operating
+254,South Africa,Au,Muriel,Suspended
+255,UK,Dia,Murowa,"Operating, exp/constr"
+256,South Africa,Cu,Ngezi,"Operating, exp/constr"
+257,South Africa,Au,Ngezi,"Operating, exp/constr"
+258,South Africa,Ni,Ngezi,"Operating, exp/constr"
+259,South Africa,PGM,Ngezi,"Operating, exp/constr"
+260,South Africa,PGM,Ngezi,"Operating, exp/constr"
+261,South Africa,PGM,Ngezi,"Operating, exp/constr"
+262,South Africa,PGM,Ngezi,"Operating, exp/constr"
+263,Canada,Au,Old,Operating
+264,Canada,Au,Olympus,Active
+265,South Africa,Au,Redwing,Operating
+266,Zimbabwe,Cu,Renco,Operating
+267,Zimbabwe,Au,Renco,Operating
+268,India,Fe,Ripple,Suspended
+269,Canada,Dia,River,Operating
+270,Zimbabwe,Au,Sabi,Active
+271,Zimbabwe,Au,Sabi,Operating
+272,Zimbabwe,Cu,Sanyati,Closed
+273,South Africa,Au,Shamwa,Operating
+274,UK,Co,Shangani,Suspended
+275,UK,Cu,Shangani,Suspended
+276,UK,Ni,Shangani,Suspended
+277,Australia,Au,Tiger,Operating
+278,UK,Co,Trojan,Operating
+279,UK,Cu,Trojan,Operating
+280,UK,Ni,Trojan,Operating
+281,Canada,Au,Turk,Operating
+282,UK,Cu,Unki,Operating
+283,UK,Au,Unki,Operating
+284,UK,Ni,Unki,Operating
+285,UK,PGM,Unki,Operating
+286,UK,PGM,Unki,Operating
+287,UK,PGM,Unki,Operating
+288,UK,PGM,Unki,Operating
+289,Canada,Au,Venice,"Closed, reopen/plans"
+290,Zimbabwe,Au,Vubachikwe,Operating
+291,Zimbabwe,Cr,Zimbabwe,Active
+292,China,Cr,Zimbabwe,Active
+293,Australia,Au,Afrikaner,Closed
+294,South Africa,Dia,Agisanang,Suspended
+295,South Africa,Dia,Alexkor,Active
+296,UK,Cu,Amandelbult,Operating
+297,UK,Au,Amandelbult,Operating
+298,UK,Ni,Amandelbult,Operating
+299,UK,PGM,Amandelbult,Operating
+300,UK,PGM,Amandelbult,Operating
+301,UK,PGM,Amandelbult,Operating
+302,UK,PGM,Amandelbult,Operating
+303,South Africa,coal,Arnot,Operating
+304,Switzerland,coal,ATC,Operating
+305,Switzerland,coal,ATCOM,"Operating, exp/constr"
+306,Canada,coal,Aviemore,Operating
+307,South Africa,Cu,Bafokeng-Rasimone,Operating
+308,South Africa,Au,Bafokeng-Rasimone,Operating
+309,South Africa,Ni,Bafokeng-Rasimone,Operating
+310,South Africa,PGM,Bafokeng-Rasimone,Operating
+311,South Africa,PGM,Bafokeng-Rasimone,Operating
+312,South Africa,PGM,Bafokeng-Rasimone,Operating
+313,South Africa,PGM,Bafokeng-Rasimone,Operating
+314,South Africa,Dia,Baken,Operating
+315,South Africa,Au,Balmoral,Active
+316,South Africa,Au,Bambanani,Operating
+317,UK,coal,Bank,Suspended
+318,South Africa,coal,Bankfontein,Operating
+319,South Africa,Au,Barberton,Closed
+320,South Africa,Au,Barberton,Operating
+321,Australia,Au,Barbrook,Operating
+322,UK,Cu,Bathopele,"Operating, exp/plans"
+323,UK,Au,Bathopele,"Operating, exp/plans"
+324,UK,Ni,Bathopele,"Operating, exp/plans"
+325,UK,PGM,Bathopele,"Operating, exp/plans"
+326,UK,PGM,Bathopele,"Operating, exp/plans"
+327,UK,PGM,Bathopele,"Operating, exp/plans"
+328,UK,PGM,Bathopele,"Operating, exp/plans"
+329,South Africa,Au,Beatrix,"Operating, exp/constr"
+330,South Africa,Fe,Beeshoek,Operating
+331,South Africa,Au,Benoni,Closed
+332,South Africa,coal,Black,Operating
+333,UK,Cu,Black,Operating
+334,UK,Pb,Black,Operating
+335,UK,Ag,Black,Operating
+336,UK,Zn,Black,Operating
+337,South Africa,Mn,Black,Operating
+338,UK,coal,Black,Operating
+339,South Africa,Dia,Bloeddrift,Operating
+340,Canada,Au,Blue,Suspended
+341,Australia,Au,Blue,"Susp, restart/plans"
+342,Australia,PGM,Blue,"Susp, restart/plans"
+343,Australia,PGM,Blue,"Susp, restart/plans"
+344,Australia,PGM,Blue,"Susp, restart/plans"
+345,Australia,PGM,Blue,"Susp, restart/plans"
+346,South Africa,Au,Blyvooruitzicht,Operating
+347,South Africa,U,Blyvooruitzicht,Operating
+348,South Africa,Au,Blyvooruitzicht,Operating
+349,South Africa,Au,Blyvooruitzicht,Operating
+350,South Africa,Dia,Bokang,Suspended
+351,UK,Cu,Bokoni,Operating
+352,UK,Au,Bokoni,Operating
+353,UK,Ni,Bokoni,Operating
+354,UK,PGM,Bokoni,Operating
+355,UK,PGM,Bokoni,Operating
+356,UK,PGM,Bokoni,Operating
+357,UK,PGM,Bokoni,Operating
+358,Switzerland,coal,Boschmans,Operating
+359,Switzerland,Cr,Boshoek,Operating
+360,South Africa,coal,Bosjesspruit,Operating
+361,South Africa,Au,Bracken,Suspended
+362,South Africa,coal,Brandspruit,Operating
+363,South Africa,Au,Buffelsfontein,Operating
+364,South Africa,Au,Buffelsfontein,"Susp, restart/feasib"
+365,UK,Cr,Buffelsfontein,"Operating, exp/plans"
+366,South Africa,Au,Buffelsfontein,Operating
+367,South Africa,Au,Buffelsfontein,Suspended
+368,South Africa,U,Buffelsfontein,Suspended
+369,Canada,Au,Burnstone,Suspended
+370,South Africa,Au,Central,Operating
+371,Germany,Cr,Chrome,Operating
+372,Switzerland,Cr,Chrome,Suspended
+373,South Africa,Au,City,Closed
+374,Switzerland,Cr,CMI,Suspended
+375,South Africa,Mn,Consolidated,Non-active
+376,South Africa,Sb,Consolidated,Operating
+377,South Africa,Au,Consolidated,Operating
+378,Australia,Au,Cooke,Operating
+379,Australia,Au,Cooke,Operating
+380,Australia,U,Cooke,Operating
+381,Canada,Au,Crocodile,"Operating, exp/plans"
+382,Canada,PGM,Crocodile,"Operating, exp/plans"
+383,Canada,PGM,Crocodile,"Operating, exp/plans"
+384,Canada,PGM,Crocodile,"Operating, exp/plans"
+385,Canada,PGM,Crocodile,"Operating, exp/plans"
+386,South Africa,Au,Crown,Operating
+387,South Africa,Dia,Cullinan,"Operating, exp/plans"
+388,South Africa,Au,Daggafontein,Suspended
+389,South Africa,Au,Deelkraal,Operating
+390,South Africa,coal,Delmas,Operating
+391,South Africa,coal,Delmas,Operating
+392,China,Cr,Dilokong,Operating
+393,UK,Cu,Dishaba,Operating
+394,UK,Au,Dishaba,Operating
+395,UK,Ni,Dishaba,Operating
+396,UK,PGM,Dishaba,Operating
+397,UK,PGM,Dishaba,Operating
+398,UK,PGM,Dishaba,Operating
+399,UK,PGM,Dishaba,Operating
+400,South Africa,U,Dominion,Suspended
+401,South Africa,Au,Doornfontein,Closed
+402,South Africa,Ag,Doornfontein,Closed
+403,South Africa,Au,Doornkop,Operating
+404,France,coal,Dorstfontein,Operating
+405,South Africa,Au,Droogebult,Suspended
+406,South Africa,Au,Durban,Closed
+407,South Africa,Ag,Durban,Closed
+408,South Africa,Cr,Dwarsrivier,Operating
+409,South Africa,Au,East,"Susp, restart/plans"
+410,South Africa,Ag,East,"Susp, restart/plans"
+411,UK,Au,Eastern,Operating
+412,UK,PGM,Eastern,Operating
+413,UK,PGM,Eastern,Operating
+414,UK,PGM,Eastern,Operating
+415,UK,PGM,Eastern,Operating
+416,South Africa,coal,Eastside,Operating
+417,Canada,Au,Eersteling,"Susp, restart/plans"
+418,South Africa,Au,Eland,Closed
+419,UK,Cr,Elandsdrift,Operating
+420,South Africa,coal,Elandsfontein,Operating
+421,Switzerland,PGM,Elandsfontein,"Operating, exp/plans"
+422,Switzerland,PGM,Elandsfontein,"Operating, exp/plans"
+423,Switzerland,PGM,Elandsfontein,"Operating, exp/plans"
+424,Switzerland,PGM,Elandsfontein,"Operating, exp/plans"
+425,South Africa,Au,Elandsrand,"Operating, exp/plans"
+426,South Africa,coal,Elcoal,Closed
+427,South Africa,U,Ergo,Operating
+428,South Africa,Au,Ergo,Operating
+429,South Africa,Au,Evander,"Operating, exp/plans"
+430,South Africa,Au,Evander,"Closed, reopen/plans"
+431,Australia,Au,Everest,Suspended
+432,Australia,PGM,Everest,Suspended
+433,Australia,PGM,Everest,Suspended
+434,Australia,PGM,Everest,Suspended
+435,Australia,PGM,Everest,Suspended
+436,Australia,coal,Ferreira,"Operating, exp/constr"
+437,South Africa,Dia,Finsch,Operating
+438,France,coal,Forzando,Operating
+439,South Africa,Au,Free,Closed
+440,South Africa,Au,Free,Closed
+441,South Africa,Au,Freegold,Closed
+442,South Africa,Ag,Freegold,Closed
+443,South Africa,U,Freegold,Closed
+444,South Africa,Au,Freegold,Operating
+445,South Africa,Au,Galaxy,"Susp, restart/plans"
+446,Australia,coal,Geluk,Closed
+447,UK,coal,Goedehoop,Operating
+448,Switzerland,coal,Goedgevonden,Operating
+449,South Africa,coal,Golfview,Operating
+450,South Africa,Cr,Goudini,Suspended
+451,South Africa,coal,Graspan,Operating
+452,South Africa,Au,Great,Operating
+453,UK,coal,Greenside,Operating
+454,South Africa,coal,Groenvallei,Operating
+455,South Africa,coal,Grootegeluk,"Operating, exp/constr"
+456,South Africa,Au,Grootvlei,Operating
+457,South Africa,coal,Halfgewonnen,Operating
+458,South Africa,Au,Harmony,Closed
+459,South Africa,Au,Harmony,Operating
+460,South Africa,Au,Harmony/Free,Operating
+461,South Africa,Au,Harmony/Free,Closed
+462,South Africa,Ag,Harmony/Free,Closed
+463,South Africa,U,Harmony/Free,Closed
+464,South Africa,Au,Hartebeest,Suspended
+465,South Africa,U,Hartebeest,Suspended
+466,Switzerland,Cr,Helena,Operating
+467,Japan,Cr,Hernic,Operating
+468,Russia,V,Highveld,Operating
+469,South Africa,Ti,Hillendale,Operating
+470,South Africa,Zr,Hillendale,Operating
+471,Canada,Dia,Holpan/Klipdam,Operating
+472,South Africa,Dia,Hondeklip,"Closed, reclamation"
+473,Switzerland,Cr,Horizon,"Susp, restart/plans"
+474,Australia,Mn,Hotazel,Operating
+475,India,coal,Ilanga,Operating
+476,South Africa,Co,Impala,"Operating, exp/constr"
+477,South Africa,Cu,Impala,"Operating, exp/constr"
+478,South Africa,Au,Impala,"Operating, exp/constr"
+479,South Africa,Ni,Impala,"Operating, exp/constr"
+480,South Africa,PGM,Impala,"Operating, exp/constr"
+481,South Africa,PGM,Impala,"Operating, exp/constr"
+482,South Africa,PGM,Impala,"Operating, exp/constr"
+483,South Africa,PGM,Impala,"Operating, exp/constr"
+484,Switzerland,coal,iMpunzi,"Operating, exp/constr"
+485,South Africa,coal,Inyanda,Operating
+486,UK,coal,Isibonelo,Operating
+487,South Africa,Au,Joel,"Operating, exp/feasib"
+488,South Africa,Au,Kalahari,Operating
+489,South Africa,Au,KDC,"Operating, exp/plans"
+490,South Africa,Ag,KDC,"Operating, exp/plans"
+491,South Africa,Au,KDC,"Operating, exp/plans"
+492,South Africa,Ag,KDC,"Operating, exp/plans"
+493,South Africa,U,KDC,"Operating, exp/plans"
+494,Canada,coal,Kendal,Operating
+495,Switzerland,V,Kennedy's,Closed
+496,UK,Cu,Khomanani,Operating
+497,UK,Au,Khomanani,Operating
+498,UK,Ni,Khomanani,Operating
+499,UK,PGM,Khomanani,Operating
+500,UK,PGM,Khomanani,Operating
+501,UK,PGM,Khomanani,Operating
+502,UK,PGM,Khomanani,Operating
+503,South Africa,Fe,Khumani,"Operating, exp/feasib"
+504,UK,Cu,Khuseleka,Operating
+505,UK,Au,Khuseleka,Operating
+506,UK,Ni,Khuseleka,Operating
+507,UK,PGM,Khuseleka,Operating
+508,UK,PGM,Khuseleka,Operating
+509,UK,PGM,Khuseleka,Operating
+510,UK,PGM,Khuseleka,Operating
+511,Australia,coal,Khutala,Operating
+512,South Africa,Dia,Kimberley,Operating
+513,UK,Dia,Kimberley,Operating
+514,South Africa,Au,Kinross,Suspended
+515,UK,coal,Kleinkopje,Operating
+516,Netherlands,coal,Klip,Suspended
+517,Canada,Dia,Klipgat,Suspended
+518,UK,Dia,Klipspringer,Operating
+519,Australia,coal,Klipspruit,Operating
+520,South Africa,Au,Klipwal,Operating
+521,South Africa,Au,Knights,Active
+522,South Africa,Dia,Koffiefontein,Operating
+523,UK,Fe,Kolomela,Operating
+524,Switzerland,coal,Koornfontein,Operating
+525,South Africa,Au,Kopanang,Operating
+526,South Africa,coal,Kopermyne,Operating
+527,UK,coal,Kriel,Operating
+528,Switzerland,Cr,Kroondal,Operating
+529,UK,Cu,Kroondal,Operating
+530,UK,Au,Kroondal,Operating
+531,UK,Ni,Kroondal,Operating
+532,UK,PGM,Kroondal,Operating
+533,UK,PGM,Kroondal,Operating
+534,UK,PGM,Kroondal,Operating
+535,UK,PGM,Kroondal,Operating
+536,South Africa,Au,Kusasalethu,Closed
+537,South Africa,Au,Kusasalethu,"Operating, exp/constr"
+538,South Africa,coal,Lakeside,Operating
+539,UK,coal,Landau,Operating
+540,South Africa,Au,Leeudoorn,Closed
+541,Netherlands,coal,Leeuw,Operating
+542,South Africa,coal,Leeuwfontein,Operating
+543,South Africa,coal,Leeuwpan,Operating
+544,South Africa,Au,Leslie,Suspended
+545,South Africa,Au,Libanon,Closed
+546,South Africa,Ag,Libanon,Closed
+547,Australia,Au,Lily,"Operating, exp/feasib"
+548,Australia,Au,Lindum,Suspended
+549,UK,Cu,Lonmin,Suspended
+550,UK,Au,Lonmin,Suspended
+551,UK,Ni,Lonmin,Suspended
+552,UK,PGM,Lonmin,Suspended
+553,UK,PGM,Lonmin,Suspended
+554,UK,PGM,Lonmin,Suspended
+555,UK,PGM,Lonmin,Suspended
+556,UK,Cu,Lonmin,Operating
+557,UK,Au,Lonmin,Operating
+558,UK,Ni,Lonmin,Operating
+559,UK,PGM,Lonmin,Operating
+560,UK,PGM,Lonmin,Operating
+561,UK,PGM,Lonmin,Operating
+562,UK,PGM,Lonmin,Operating
+563,South Africa,Dia,Lower,Operating
+564,UK,coal,Mafube,Operating
+565,Canada,coal,Magdalena,Operating
+566,Canada,coal,Magdelena,Operating
+567,Canada,coal,Magdelena,Operating
+568,Australia,Au,Makonjwaan,Suspended
+569,Russia,Fe,Mapochs,Operating
+570,China,Cu,Maranda,Closed
+571,China,Zn,Maranda,Closed
+572,UK,Cr,Marico,Operating
+573,South Africa,Au,Marievale,Closed
+574,UK,Au,Marikana,"Susp, restart/plans"
+575,UK,PGM,Marikana,"Susp, restart/plans"
+576,UK,PGM,Marikana,"Susp, restart/plans"
+577,UK,PGM,Marikana,"Susp, restart/plans"
+578,UK,PGM,Marikana,"Susp, restart/plans"
+579,South Africa,Ni,Marula,"Operating, exp/plans"
+580,South Africa,PGM,Marula,"Operating, exp/plans"
+581,South Africa,PGM,Marula,"Operating, exp/plans"
+582,South Africa,PGM,Marula,"Operating, exp/plans"
+583,South Africa,PGM,Marula,"Operating, exp/plans"
+584,South Africa,Au,Masimong,Operating
+585,South Africa,Au,Matjhabeng,Closed
+586,South Africa,coal,Matla,Operating
+587,Australia,Au,Megamine/Sub,Suspended
+588,USA,Cr,Metallurg,Active
+589,South Africa,coal,Middelbult,Operating
+590,Australia,coal,Middelburg,Operating
+591,South Africa,coal,Middelburg,Operating
+592,South Africa,Au,Middelvlei,Operating
+593,South Africa,coal,Mimosa,Operating
+594,South Africa,Au,Moab,"Operating, exp/feasib"
+595,Australia,Au,Modder,Operating
+596,South Africa,Au,Modderfontein,Operating
+597,UK,Cu,Modikwa,"Operating, exp/feasib"
+598,UK,Au,Modikwa,"Operating, exp/feasib"
+599,UK,Ni,Modikwa,"Operating, exp/feasib"
+600,UK,PGM,Modikwa,"Operating, exp/feasib"
+601,UK,PGM,Modikwa,"Operating, exp/feasib"
+602,UK,PGM,Modikwa,"Operating, exp/feasib"
+603,UK,PGM,Modikwa,"Operating, exp/feasib"
+604,UK,Cu,Mogalakwena,Operating
+605,UK,Au,Mogalakwena,Operating
+606,UK,Ni,Mogalakwena,Operating
+607,UK,PGM,Mogalakwena,Operating
+608,UK,PGM,Mogalakwena,Operating
+609,UK,PGM,Mogalakwena,Operating
+610,UK,PGM,Mogalakwena,Operating
+611,Australia,Au,Mogale,Operating
+612,Australia,coal,Mooiplaats,Operating
+613,UK,Cu,Mototolo,Operating
+614,UK,Au,Mototolo,Operating
+615,UK,Ni,Mototolo,Operating
+616,UK,PGM,Mototolo,Operating
+617,UK,PGM,Mototolo,Operating
+618,UK,PGM,Mototolo,Operating
+619,UK,PGM,Mototolo,Operating
+620,South Africa,Au,Mponeng,"Operating, exp/plans"
+621,South Africa,Au,Mpumalanga,Suspended
+622,South Africa,Au,Mvelaphanda,Active
+623,South Africa,Ti,Namakwa,Operating
+624,South Africa,Zr,Namakwa,Operating
+625,UK,Dia,Namaqualand,Suspended
+626,South Africa,coal,New,Operating
+627,UK,coal,New,Operating
+628,UK,coal,New,"Operating, exp/feasib"
+629,South Africa,Au,Nigel,Operating
+630,South Africa,coal,Nkomati,Suspended
+631,South Africa,Cr,Nkomati,"Operating, exp/plans"
+632,South Africa,Co,Nkomati,"Operating, exp/plans"
+633,South Africa,Cu,Nkomati,"Operating, exp/plans"
+634,South Africa,Au,Nkomati,"Operating, exp/plans"
+635,South Africa,Ni,Nkomati,"Operating, exp/plans"
+636,South Africa,PGM,Nkomati,"Operating, exp/plans"
+637,South Africa,PGM,Nkomati,"Operating, exp/plans"
+638,South Africa,PGM,Nkomati,"Operating, exp/plans"
+639,UK,coal,Nooitgedacht,Operating
+640,South Africa,coal,North,Operating
+641,South Africa,Au,North,Operating
+642,South Africa,Cu,Northam,Operating
+643,South Africa,Au,Northam,Operating
+644,South Africa,Ni,Northam,Operating
+645,South Africa,PGM,Northam,Operating
+646,South Africa,PGM,Northam,Operating
+647,South Africa,PGM,Northam,Operating
+648,South Africa,PGM,Northam,Operating
+649,China,Cu,O'Okiep,Closed
+650,China,Au,O'Okiep,Closed
+651,China,Ag,O'Okiep,Closed
+652,South Africa,Au,Omaruru,Suspended
+653,Switzerland,coal,Optimum,"Operating, exp/constr"
+654,Hong Kong,Au,Orkney,Operating
+655,South Africa,Au,Oryx,Operating
+656,South Africa,Au,Ospray,Active
+657,South Africa,coal,Paardeplaats,Operating
+658,UK,Cu,Palabora,Closed
+659,UK,Au,Palabora,Closed
+660,UK,Fe,Palabora,Closed
+661,UK,PGM,Palabora,Closed
+662,UK,PGM,Palabora,Closed
+663,UK,PGM,Palabora,Closed
+664,UK,Ag,Palabora,Closed
+665,UK,Ti,Palabora,Closed
+666,UK,U,Palabora,Closed
+667,UK,Zr,Palabora,Closed
+668,UK,Cu,Palabora,Operating
+669,UK,Ag,Palabora,Operating
+670,Canada,Dia,Palmietgat,Operating
+671,UK,Cu,Pandora,Operating
+672,UK,Au,Pandora,Operating
+673,UK,Ni,Pandora,Operating
+674,UK,PGM,Pandora,Operating
+675,UK,PGM,Pandora,Operating
+676,UK,PGM,Pandora,Operating
+677,UK,PGM,Pandora,Operating
+678,Australia,Pb,Pering,Closed
+679,Australia,Zn,Pering,Closed
+680,South Africa,Au,Petrex,Operating
+681,South Africa,Au,Phakisa,Operating
+682,Switzerland,coal,Phoenix,Operating
+683,South Africa,Cu,Phosphate,Active
+684,South Africa,PO43,Phosphate,Active
+685,South Africa,Ag,Phosphate,Active
+686,South Africa,Zr,Phosphate,Active
+687,South Africa,coal,Polmaise,Operating
+688,South Africa,Au,President,Operating
+689,South Africa,Cu,Prieska,Active
+690,South Africa,Zn,Prieska,Active
+691,South Africa,Au,Primrose,Operating
+692,Canada,Dia,Quaggas,Operating
+693,South Africa,Au,Rand,Closed
+694,Australia,Au,Randfontein,Operating
+695,South Africa,Dia,Reuning,Operating
+696,Switzerland,V,Rhovan,Operating
+697,UK,Ti,Richards,Operating
+698,UK,Zr,Richards,Operating
+699,Australia,coal,Rietspruit,Closed
+700,South Africa,Cr,Rustenburg,Operating
+701,UK,Co,Rustenburg,Active
+702,UK,Cu,Rustenburg,Active
+703,UK,Au,Rustenburg,Active
+704,UK,Ni,Rustenburg,Active
+705,UK,PGM,Rustenburg,Active
+706,UK,PGM,Rustenburg,Active
+707,UK,PGM,Rustenburg,Active
+708,UK,Co,Rustenburg,"Operating, exp/plans"
+709,UK,Cu,Rustenburg,"Operating, exp/plans"
+710,UK,Au,Rustenburg,"Operating, exp/plans"
+711,UK,Ni,Rustenburg,"Operating, exp/plans"
+712,UK,PGM,Rustenburg,"Operating, exp/plans"
+713,UK,PGM,Rustenburg,"Operating, exp/plans"
+714,UK,PGM,Rustenburg,"Operating, exp/plans"
+715,UK,PGM,Rustenburg,"Operating, exp/plans"
+716,UK,Cu,Rustenburg,Operating
+717,UK,Au,Rustenburg,Operating
+718,UK,Ni,Rustenburg,Operating
+719,UK,PGM,Rustenburg,Operating
+720,UK,PGM,Rustenburg,Operating
+721,UK,PGM,Rustenburg,Operating
+722,UK,PGM,Rustenburg,Operating
+723,South Africa,Mn,Ryedale,Operating
+724,South Africa,Au,Sable/Kudu,Closed
+725,South Africa,Au,Saint,Closed
+726,UK,Cr,Samancor,Operating
+727,Australia,PO43,Samancor,Active
+728,South Africa,coal,Savmore,Operating
+729,South Africa,Au,Savuka,Operating
+730,Canada,Dia,Saxendrift,"Operating, exp/feasib"
+731,South Africa,coal,Shanduka,Operating
+732,South Africa,coal,Sigma,Operating
+733,UK,Cu,Siphumelele,Operating
+734,UK,Au,Siphumelele,Operating
+735,UK,Ni,Siphumelele,Operating
+736,UK,PGM,Siphumelele,Operating
+737,UK,PGM,Siphumelele,Operating
+738,UK,PGM,Siphumelele,Operating
+739,UK,PGM,Siphumelele,Operating
+740,UK,Fe,Sishen,"Operating, exp/plans"
+741,South Africa,Au,Skukuza,Operating
+742,Canada,Dia,So,Operating
+743,South Africa,coal,Somkhele,"Operating, exp/constr"
+744,UK,Dia,South,Operating
+745,South Africa,Au,South,"Operating, exp/plans"
+746,South Africa,U,South,"Operating, exp/plans"
+747,Switzerland,coal,South,Operating
+748,South Africa,coal,Spitzkop,Operating
+749,South Africa,coal,Springlake,Operating
+750,South Africa,Au,Stanhope,Active
+751,South Africa,Au,Stilfontein,Closed
+752,South Africa,U,Stilfontein,Closed
+753,South Africa,coal,Syferfontein,Operating
+754,South Africa,Au,Target,Operating
+755,South Africa,Au,Target,Operating
+756,South Africa,Au,Tau,Operating
+757,South Africa,Au,Tautona,"Operating, exp/plans"
+758,Switzerland,coal,Tavistock,Operating
+759,UK,Fe,Thabazimbi,Operating
+760,UK,Dia,The,Closed
+761,UK,Cu,Thembelani,"Operating, exp/plans"
+762,UK,Au,Thembelani,"Operating, exp/plans"
+763,UK,Ni,Thembelani,"Operating, exp/plans"
+764,UK,PGM,Thembelani,"Operating, exp/plans"
+765,UK,PGM,Thembelani,"Operating, exp/plans"
+766,UK,PGM,Thembelani,"Operating, exp/plans"
+767,UK,PGM,Thembelani,"Operating, exp/plans"
+768,Switzerland,Cr,Thorncliffe,"Operating, exp/plans"
+769,South Africa,Dia,Trans,Operating
+770,Russia,V,Transvaal,Active
+771,South Africa,coal,Tselentis,Operating
+772,South Africa,Au,Tshepong,"Operating, exp/constr"
+773,South Africa,coal,Tshikondeni,Operating
+774,UK,Cu,Tumela,Operating
+775,UK,Au,Tumela,Operating
+776,UK,Ni,Tumela,Operating
+777,UK,PGM,Tumela,Operating
+778,UK,PGM,Tumela,Operating
+779,UK,PGM,Tumela,Operating
+780,UK,PGM,Tumela,Operating
+781,Switzerland,coal,Tweefontein,"Operating, exp/feasib"
+782,Switzerland,coal,Tweefontein,Operating
+783,UK,Au,Twickenham,"Operating, exp/plans"
+784,UK,Ni,Twickenham,"Operating, exp/plans"
+785,UK,PGM,Twickenham,"Operating, exp/plans"
+786,UK,PGM,Twickenham,"Operating, exp/plans"
+787,UK,PGM,Twickenham,"Operating, exp/plans"
+788,UK,PGM,Twickenham,"Operating, exp/plans"
+789,South Africa,coal,Twistdraai,Operating
+790,South Africa,Au,Two,Operating
+791,South Africa,Ni,Two,Operating
+792,South Africa,PGM,Two,Operating
+793,South Africa,PGM,Two,Operating
+794,South Africa,PGM,Two,Operating
+795,South Africa,PGM,Two,Operating
+796,Switzerland,coal,Umcebo,Operating
+797,India,coal,Umlabu,Operating
+798,USA,Cr,Union,Non-active
+799,UK,Cu,Union,Operating
+800,UK,Au,Union,Operating
+801,UK,Ni,Union,Operating
+802,UK,PGM,Union,Operating
+803,UK,PGM,Union,Operating
+804,UK,PGM,Union,Operating
+805,UK,PGM,Union,Operating
+806,South Africa,Au,Unisel,Operating
+807,South Africa,Au,Vaal,Operating
+808,South Africa,U,Vaal,Operating
+809,South Africa,Au,Vaal,Operating
+810,Russia,V,Vametco,Active
+811,Australia,coal,Vele,Operating
+812,UK,Dia,Venetia,"Operating, exp/feasib"
+813,South Africa,Au,Venterspost,Closed
+814,South Africa,Ag,Venterspost,Closed
+815,South Africa,Au,Virginia,Operating
+816,South Africa,Au,Vlakfontein,Closed
+817,Australia,coal,Vlakvarkfontein,Operating
+818,UK,Dia,Voorspoed,Operating
+819,Switzerland,coal,Waterpan,Operating
+820,Switzerland,Cr,Waterval,Operating
+821,South Africa,coal,Welgedacht,Operating
+822,Hong Kong,Au,Welkom,Suspended
+823,Australia,coal,Wesselton,Closed
+824,South Africa,Au,West,Operating
+825,South Africa,Ag,West,Operating
+826,South Africa,U,West,Operating
+827,South Africa,Au,West,Closed
+828,South Africa,Au,West,Closed
+829,South Africa,Au,West,Operating
+830,Australia,Au,West,Closed
+831,UK,Cu,Western,Operating
+832,UK,Au,Western,Operating
+833,UK,Ni,Western,Operating
+834,UK,PGM,Western,Operating
+835,UK,PGM,Western,Operating
+836,UK,PGM,Western,Operating
+837,UK,PGM,Western,Operating
+838,UK,Cu,Western,Operating
+839,UK,Au,Western,Operating
+840,UK,Ni,Western,Operating
+841,UK,PGM,Western,Operating
+842,UK,PGM,Western,Operating
+843,UK,PGM,Western,Operating
+844,UK,PGM,Western,Operating
+845,South Africa,Au,Winkelhaak,Suspended
+846,Switzerland,coal,Witcons,Operating
+847,South Africa,Au,Witwatersrand,Non-active
+848,Australia,coal,Woestalleen,Operating
+849,Australia,coal,Wolvekrans,Operating
+850,Canada,Dia,Wouterspan,"Susp, restart/plans"
+851,South Africa,Sn,Zaaiplaats,Active
+852,South Africa,Cr,Zeerust,Active
+853,UK,coal,Zibulo,Operating
+854,UK,coal,Zululand,Operating
