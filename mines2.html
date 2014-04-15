@@ -26,7 +26,7 @@
 <div id='map'></div>
 <script>
 var map = L.mapbox.map('map', 'frenchsilk4.hd4mbhpn')
-    .setView([1.76,17.93], 4)
+    .setView([1.76,17.93], 5)
 
 // omnivore will AJAX-request this file behind the scenes and parse it:
 // note that there are considerations:
@@ -44,7 +44,7 @@ function eachLayer(layer) {
         layer.bindPopup("Name - " + feature.properties.shortname);
     }
 }
-var points = omnivore.csv('data/minemetaDEL.csv', {
+var points = omnivore.csv('data/minemetaALL.csv', {
     icon: L.mapbox.marker.icon({
         'marker-symbol': 'airport',
         'marker-color': '59245f'
@@ -53,7 +53,7 @@ var points = omnivore.csv('data/minemetaDEL.csv', {
     map.fitBounds(points.getBounds());
     var markers = L.markerClusterGroup({
         showCoverageOnHover: false,
-        maxClusterRadius: 80
+        maxClusterRadius: 40
     });
     markers.addLayer(points);
     map.addLayer(markers);

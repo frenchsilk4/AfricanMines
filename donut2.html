@@ -46,7 +46,7 @@ var pie = d3.layout.pie()
     .sort(null)
     .value(function(d) { return d.count; });
 
-d3.csv("data/minePivot.csv", function(error, data) {
+d3.csv("data/foreignownership.csv", function(error, data) {
   //color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Companycountry"; }));
     color.domain(['Dia','Mn','Au','coal','Cu','Co','Ni','PGM','Ag','Pb','Zn','coltan','U','Al','Fe','Cr','Mo','Sn','W','PO43','Ti','Li','Sb','V','Zr']);
 
